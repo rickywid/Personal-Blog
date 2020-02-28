@@ -1,7 +1,7 @@
 ---
-title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+title: Windows to Linux
+date: "2018-11-23"
+description: "Why I'm switching to Linux"
 ---
 
 This is my first post on my new fake blog! How exciting!
