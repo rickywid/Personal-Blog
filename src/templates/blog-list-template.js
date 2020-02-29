@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
@@ -76,7 +75,6 @@ const BlogListTemplate = ({ data, pageContext, location }) => {
         </Link>
       )}
       </BlogList> 
-      <Bio />
     </Layout>
   )
 }
@@ -111,29 +109,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-// export const blogListQuery = graphql`
-//   query blogListQuery($skip: Int!, $limit: Int!) {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//     allMarkdownRemark(
-//       sort: { fields: [frontmatter___date], order: DESC }
-//       limit: $limit
-//       skip: $skip
-//     ) {
-//       edges {
-//         node {
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             title
-//           }
-//         }
-//       }
-//     }
-//   }
-//  ` 

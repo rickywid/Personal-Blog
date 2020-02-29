@@ -1,20 +1,27 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from 'styled-components'
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { data } from '../data'
 
  const Project = styled.div`
-  display: flex;
   margin-bottom: 4rem;
+
+  @media (min-width: 500px) {
+    display: flex;
+  }
 `;
 
  const ProjectImage = styled.img`
   align-self: flex-start;
   flex: 1;
   margin-right: 1rem;
+  width: 100%;
+
+  @media (min-width: 500px) {
+    width: auto;
+  }
  `
  const ProjectDetail = styled.div`
    flex: 3;
@@ -101,7 +108,6 @@ import { data } from '../data'
       <Layout location={this.location} title={this.data.site.siteMetadata.title}>
         <SEO title={this.data.site.siteMetadata.title} />
         {data.map(this.renderProjects)}
-        <Bio />
       </Layout>
     )
    }

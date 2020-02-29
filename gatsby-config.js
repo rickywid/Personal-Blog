@@ -3,7 +3,7 @@ module.exports = {
     title: `Portfolio`,
     author: {
       name: `Ricky Widjaja`,
-      summary: `I am a web Developer who just enjoys building things during his free time.`
+      summary: `I am a Web Developer, explorer, adventurist, photographer and proud supporter of the Raptors, Leafs and Blue Jays.`
     },
     description: `A blog about learning linux, programming and all web stuff`,
     siteUrl: `https://lost-in-devlation.netlify.com/`
@@ -63,7 +63,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/power.png`,
+        icon: `content/assets/favico.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
