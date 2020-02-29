@@ -106,45 +106,6 @@ import { data } from '../data'
     )
    }
  }
- 
-// const BlogIndex = ({ data, location }) => {
-//   const siteTitle = data.site.siteMetadata.title
-
-//   const renderProjects = (project) => {
-//     return (
-//       <div>
-//         <img src={project.img} alt={project.name} />
-//         <div className="project-detail">
-//           <h3 className="highlight">{project.name}</h3>
-//           <ul>
-//             {project.skills.map(skill => (
-//               <li className="skill">
-//                 <p className="skill-item">{skill}</p>
-//                 <span className="highlight"> /</span>
-//               </li>
-//             ))
-//             }
-//           </ul>
-//           <p className="project-desc">
-//             {project.description}
-//           </p>
-//           <div className="button-group">
-//             <a href={project.links.source} className="source" rel="noopener noreferrer" target="_blank">View Source</a>
-//             <a href={project.links.demo} className="demo highlight" rel="noopener noreferrer" target="_blank">Website</a>
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <Layout location={location} title={siteTitle}>
-//       <SEO title={siteTitle} />
-//       {data.map(renderProjects)}
-//       <Bio />
-//     </Layout>
-//   )
-// }
 
 export default BlogIndex
 
