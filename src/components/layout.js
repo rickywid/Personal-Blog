@@ -19,7 +19,7 @@ library.add(fab, faEnvelope)
 const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: 36rem;
+  max-width: 40rem;
   padding: 2.25rem 1.125rem;
   text-align: center;
 
@@ -42,7 +42,7 @@ const Footer = styled.footer`
   right: 0;
   bottom: 0;
   left: 0;
-  max-width: 36rem;
+  max-width: 40rem;
   margin: 0 auto;
   padding: 2rem 0;
   border-top: 1px solid black;
@@ -72,15 +72,20 @@ const renderSocialIcons = social => {
 
  
 const Layout = ({ location, title, children }) => {
-  // const rootPath = `${__PATH_PREFIX__}/`
-  const header = (<h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-        }}
-      >
-        {title}
-      </h1>)
+  let header;
+  if(location.pathname === "/" ||
+     location.pathname === "/about" ||
+     location.pathname === "/blog"
+    ) {
+    header = (<h1
+          style={{
+            ...scale(1.5),
+            marginBottom: rhythm(1.5),
+          }}
+        >
+          {title}
+        </h1>)
+  }
 
   return (
     <Wrapper>

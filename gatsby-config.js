@@ -3,10 +3,10 @@ module.exports = {
     title: `Portfolio`,
     author: {
       name: `Ricky Widjaja`,
-      summary: `I am a Web Developer, explorer, adventurist, photographer and proud supporter of the Raptors, Leafs and Blue Jays.`
+      summary: `I am a Web Developer, traveller, explorer, photographer and proud supporter of the Raptors, Leafs and Blue Jays.`
     },
-    description: `A blog about learning linux, programming and all web stuff`,
-    siteUrl: `https://lost-in-devlation.netlify.com/`
+    description: `A blog about my learning experience with linux, programming and all web stuff related`,
+    siteUrl: `https://rickyjw.netlify.com/`
   },
   plugins: [
     {
