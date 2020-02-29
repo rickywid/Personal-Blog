@@ -21,11 +21,6 @@ const Wrapper = styled.div`
   margin-right: auto;
   max-width: 40rem;
   padding: 2.25rem 1.125rem;
-  text-align: center;
-
-  @media (min-width: 500px) {
-    text-align: initial;
-  }
 `
 const SocialLinks = styled.ul`
   margin: 0;
