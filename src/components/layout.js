@@ -70,7 +70,7 @@ const Layout = ({ location, title, children }) => {
   let header;
   if(location.pathname === "/" ||
      location.pathname === "/about" ||
-     location.pathname === "/blog"
+     location.pathname.indexOf("/blog") > -1
     ) {
     header = (<h1
           style={{
