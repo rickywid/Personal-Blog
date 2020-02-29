@@ -53,19 +53,19 @@ export const data = [
   
   export const socialLink = [
     {
-      icon: 'fa-github',
+      icon: 'github',
       link: 'http://github.com/rickywid'
     },
     {
-      icon: 'fa-codepen',
+      icon: 'codepen',
       link: 'http://codepen.io/rickyjw'
     },
     {
-      icon: 'fa-linkedin-square',
+      icon: 'linkedin',
       link: 'https://www.linkedin.com/in/ricky-widjaja-791059b6'
     },
     {
-      icon: 'fa-envelope',
+      icon: 'envelope',
       link: 'mailto:rickywid@hotmail.com'
     }
   ]

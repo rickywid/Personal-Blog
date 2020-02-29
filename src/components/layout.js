@@ -2,8 +2,19 @@ import React from "react"
 import styled from 'styled-components';
 import { rhythm, scale } from "../utils/typography"
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faGithub, faCodepen, faEnvelope, faLinkedinSquare } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+
+
+
 import Navigation from "../components/navigation"
 import { socialLink } from '../data'
+
+library.add(fab, faEnvelope)
+
 
 const Wrapper = styled.div`
   margin-left: auto;
@@ -16,15 +27,50 @@ const Wrapper = styled.div`
     text-align: initial;
   }
 `
+const SocialLinks = styled.ul`
+  margin: 0;
+`
+const SocialItem = styled.li`
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+`
+const Footer = styled.footer`
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+  border-top: 1px solid black;
+`
 
-const renderSocialIcons = social => (
-    <li>
-      <a href={social.icon !== 'fa-envelope' ? social.link : 'mailto:rickywid@hotmail.com'} className="profile__social-link" rel="noopener noreferrer" target="_blank">
-        <i className={`fa ${social.icon} highlight`} aria-hidden="true" />
+const renderSocialIcons = social => {
+  if(social.icon === "envelope") {
+    return (
+      <SocialItem>
+        <a href="mailto:rickywid@hotmail.com">
+          <FontAwesomeIcon icon="envelope" />
+        </a>
+      </SocialItem>
+    )
+  }
+
+  return (
+    <SocialItem>
+      <a href={social.link}>
+        <FontAwesomeIcon icon={["fab", social.icon]} />
       </a>
-    </li>
+    </SocialItem>
   )
+}
 
+
+
+ 
 const Layout = ({ location, title, children }) => {
   // const rootPath = `${__PATH_PREFIX__}/`
   const header = (<h1
@@ -41,15 +87,15 @@ const Layout = ({ location, title, children }) => {
       <Navigation />
       <header>{header}</header>
       <main>{children}</main>
-      <footer>
+      <Footer>
         <small>© {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
         </small>
-        <ul>
+        <SocialLinks>
           {socialLink.map(renderSocialIcons)}
-        </ul>
-      </footer>
+        </SocialLinks>
+      </Footer>
     </Wrapper>
   )
 }
