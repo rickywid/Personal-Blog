@@ -1,71 +1,107 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import styled from 'styled-components';
 import { rhythm, scale } from "../utils/typography"
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  let header
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faGithub, faCodepen, faEnvelope, faLinkedinSquare } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-  if (location.pathname === rootPath) {
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h3>
+
+
+import Navigation from "../components/navigation"
+import { socialLink } from '../data'
+
+library.add(fab, faEnvelope)
+
+
+const Wrapper = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40rem;
+  padding: 2.25rem 1.125rem;
+  text-align: center;
+
+  @media (min-width: 500px) {
+    text-align: initial;
+  }
+`
+const SocialLinks = styled.ul`
+  margin: 0;
+`
+const SocialItem = styled.li`
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+`
+const Footer = styled.footer`
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+  border-top: 1px solid black;
+`
+
+const renderSocialIcons = social => {
+  if(social.icon === "envelope") {
+    return (
+      <SocialItem>
+        <a href="mailto:rickywid@hotmail.com">
+          <FontAwesomeIcon icon="envelope" />
+        </a>
+      </SocialItem>
     )
   }
+
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
+    <SocialItem>
+      <a href={social.link}>
+        <FontAwesomeIcon icon={["fab", social.icon]} />
+      </a>
+    </SocialItem>
+  )
+}
+
+
+
+ 
+const Layout = ({ location, title, children }) => {
+  let header;
+  if(location.pathname === "/" ||
+     location.pathname === "/about" ||
+     location.pathname === "/blog"
+    ) {
+    header = (<h1
+          style={{
+            ...scale(1.5),
+            marginBottom: rhythm(1.5),
+          }}
+        >
+          {title}
+        </h1>)
+  }
+
+  return (
+    <Wrapper>
+      <Navigation />
       <header>{header}</header>
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
+      <Footer>
+        <small>© {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
-    </div>
+        </small>
+        <SocialLinks>
+          {socialLink.map(renderSocialIcons)}
+        </SocialLinks>
+      </Footer>
+    </Wrapper>
   )
 }
 

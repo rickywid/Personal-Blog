@@ -1,0 +1,39 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+a {
+	background-image: none;
+
+	&:hover {
+		color: #aaa;
+	}
+}
+
+section {
+	margin-bottom: 2rem;
+}
+
+ul {
+	margin-bottom: 1rem;
+	margin-left: 0;
+
+	li {
+	  margin-right: 1rem;
+	  margin-bottom: 0;
+	}
+}
+
