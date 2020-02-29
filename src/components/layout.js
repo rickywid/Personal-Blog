@@ -16,18 +16,19 @@ const Layout = ({ location, title, children }) => {
           marginBottom: rhythm(1.5),
         }}
       >
-        <Link to={`/`}>
-          {title}
-        </Link>
+        {title}
       </h1>
     )
   } else {
     header = (
-      <h3>
-        <Link to={`/`}>
-          {title}
-        </Link>
-      </h3>
+      <h1
+        style={{
+          ...scale(1.5),
+          marginBottom: rhythm(1.5),
+        }}
+      >
+        {title}
+      </h1>
     )
   }
   return (

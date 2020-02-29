@@ -30,7 +30,7 @@ const BlogLink = styled(Link)`
   where you’d like it to go, and other helpful information.
  */
 const BlogListTemplate = ({ data, pageContext, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+  const siteTitle = "Blog"
   const posts = data.allMarkdownRemark.edges
 
   const { currentPage, numPages } = pageContext
@@ -65,7 +65,7 @@ const BlogListTemplate = ({ data, pageContext, location }) => {
           )
         })}
 
-{!isFirst && (
+      {!isFirst && (
         <Link to={prevPage} rel="prev">
           ← Previous Page
         </Link>
