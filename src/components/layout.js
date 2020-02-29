@@ -44,7 +44,7 @@ const Footer = styled.footer`
   left: 0;
   max-width: 40rem;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 1.125rem;
   border-top: 1px solid black;
 `
 
