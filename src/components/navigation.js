@@ -28,6 +28,9 @@ const Navigation = () => {
                 <Link to={`/`}>Portfolio</Link>
             </li>
             <li>
+                <Link to={`/about`}>About</Link>
+            </li>
+            <li>
                 <Link to={`/blog`}>Blog</Link>
             </li>
         </ul>

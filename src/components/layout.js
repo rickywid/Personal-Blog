@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { rhythm, scale } from "../utils/typography"
 
 import Navigation from "../components/navigation"
+import { socialLink } from '../data'
 
 const Wrapper = styled.div`
   margin-left: auto;
@@ -16,8 +17,16 @@ const Wrapper = styled.div`
   }
 `
 
+const renderSocialIcons = social => (
+    <li>
+      <a href={social.icon !== 'fa-envelope' ? social.link : 'mailto:rickywid@hotmail.com'} className="profile__social-link" rel="noopener noreferrer" target="_blank">
+        <i className={`fa ${social.icon} highlight`} aria-hidden="true" />
+      </a>
+    </li>
+  )
+
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
+  // const rootPath = `${__PATH_PREFIX__}/`
   const header = (<h1
         style={{
           ...scale(1.5),
@@ -37,6 +46,9 @@ const Layout = ({ location, title, children }) => {
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
         </small>
+        <ul>
+          {socialLink.map(renderSocialIcons)}
+        </ul>
       </footer>
     </Wrapper>
   )

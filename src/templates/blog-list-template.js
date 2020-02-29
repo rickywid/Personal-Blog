@@ -11,7 +11,7 @@ const BlogList = styled.section`
   flex-direction: column;
 `
 const BlogDate = styled.small`
-  color: #2c6c4b;
+  color: red;
   margin-right: 1rem;
   flex: 1;
   align-self: flex-end;

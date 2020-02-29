@@ -29,6 +29,7 @@ import { data } from '../data'
  const ProjectName = styled.h3`
    margin-bottom: 1rem;
    margin-top: 0;
+   color: red;
  `
  const ProjectTechnologies = styled.ul`
    margin-bottom: 1rem;
@@ -38,8 +39,6 @@ import { data } from '../data'
   padding: 0;
   list-style: none;
   display: inline-block;
-  margin-right: 1rem;
-  margin-bottom: 0;
  `
  const ProjectTechnologyName = styled.p`
    font-size: 16px;
