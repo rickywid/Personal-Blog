@@ -55,7 +55,7 @@ const BlogListTemplate = ({ data, pageContext, location }) => {
                   }}
                 >
                   <BlogDate>{node.frontmatter.date}</BlogDate>&nbsp;
-                  <BlogLink style={{ fontSize: '24px' }} to={`/blog/${node.fields.slug}`}>
+                  <BlogLink style={{ fontSize: '20px' }} to={`/blog/${node.fields.slug}`}>
                     {title}
                   </BlogLink>
                 </h6>
