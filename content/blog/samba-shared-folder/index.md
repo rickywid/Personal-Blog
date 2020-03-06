@@ -1,6 +1,6 @@
 ---
 title: Setting Up a Shared Folder with Samba
-date: "2020-01-01"
+date: "2020-03-06"
 description: How to setup a shared folder using Samba
 ---
 
