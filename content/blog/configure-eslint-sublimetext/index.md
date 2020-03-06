@@ -59,7 +59,7 @@ In ST3 menu, go to *Preferences > Package Control > Install Package* and install
 Find the pathname where node is installed
 
 `$ which node`
-*> /home/ricky/.nvm/versions/node/v10.15.3/bin*
+*$ /home/ricky/.nvm/versions/node/v10.15.3/bin*
 
 In ST3 menu, go to *Preferences > Settings* and add the following:
 ```{
@@ -74,6 +74,15 @@ In ST3 menu, go to *Preferences > Settings* and add the following:
             }
         }
     }
+}
+
+```
+
+Add the following to *Preferenes > Settings*
+
+```
+"paths": {
+    "linux": ["~/.nvm/versions/node/v13.7.0/bin"]
 }
 ```
 
@@ -104,7 +113,9 @@ If you are having any issues, you can refer to AirBnB's [documentation](https://
 `
 
 
-Restart Sublime Text.
+Close Sublime Text and in order for ESlint to work, **you must open Sublime through the command line**. Go inside your project folder and enter:
+
+`$ subl .`
 
 Confirm that ESlint is working properly:
 
@@ -117,6 +128,6 @@ If you have any questions or comments, please feel free to send me an email.
 
 **Notes**
 
-- https://github.com/SublimeLinter/SublimeLinter-eslint/issues/205
-- https://github.com/eslint/eslint/issues/10137
-- https://github.com/SublimeLinter/SublimeLinter/issues/128
+- [SublimeLinter and NVM issue](https://github.com/SublimeLinter/SublimeLinter-eslint/issues/205)
+- [SublimeLinter doesn't recognize linters installed with NVM ](https://github.com/SublimeLinter/SublimeLinter/issues/128)
+- [ /usr/bin/env: ‘node’: No such file or directory](https://github.com/SublimeLinter/SublimeLinter-eslint/issues/265)
