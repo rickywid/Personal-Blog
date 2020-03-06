@@ -20,9 +20,9 @@ Setting up and configuring ESLint can be a perplexing procedure since everybody'
 
 Check that you have nvm, npm and Sublime Text 3 installed. 
 ```
-$ nvm --version > 0.30.2   
-$ npm -v > 6.13.7
-$ subl -v > Sublime Text Build 32111`
+$ nvm --version # 0.30.2   
+$ npm -v # 6.13.7
+$ subl -v # Sublime Text Build 32111`
 ```
 
 If you receive a `command not found` error with any of the following commands, you will need to install that application first before continuing on. There are already plenty of guides to show you how to install the above applications.
@@ -113,7 +113,7 @@ Confirm that ESlint is working properly:
 
 ![eslint](./eslint.png)
 
-If you have any issues or you there is a misinformation, feel free to send me an email.
+If you have any questions or comments, please feel free to send me an email.
 
 **Notes**
 
