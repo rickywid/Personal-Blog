@@ -13,6 +13,8 @@ The only temporary workaround I have found so far is to do the following when tr
 
 If everything worked, then you should be logged back into your computer continuing where you last continued.
 
+If you have any questions or comments, please feel free to send me an email.
+
 
 **Notes**
 - [ubuntu 18 04 wont wake after screen lock and blank suspend sleep](https://unix.stackexchange.com/questions/442057/ubuntu-18-04-wont-wake-after-screen-lock-and-blank-suspend-sleep%3E)
