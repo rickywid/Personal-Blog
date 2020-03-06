@@ -20,9 +20,9 @@ Setting up and configuring ESLint can be a perplexing procedure since everybody'
 
 Check that you have nvm, npm and Sublime Text 3 installed. 
 ```
-$ nvm --version > 0.30.2   
-$ npm -v > 6.13.7
-$ subl -v > Sublime Text Build 32111`
+$ nvm --version # 0.30.2   
+$ npm -v # 6.13.7
+$ subl -v # Sublime Text Build 32111`
 ```
 
 If you receive a `command not found` error with any of the following commands, you will need to install that application first before continuing on. There are already plenty of guides to show you how to install the above applications.
@@ -59,7 +59,7 @@ In ST3 menu, go to *Preferences > Package Control > Install Package* and install
 Find the pathname where node is installed
 
 `$ which node`
-*> /home/ricky/.nvm/versions/node/v10.15.3/bin*
+*$ /home/ricky/.nvm/versions/node/v10.15.3/bin*
 
 In ST3 menu, go to *Preferences > Settings* and add the following:
 ```{
@@ -74,6 +74,15 @@ In ST3 menu, go to *Preferences > Settings* and add the following:
             }
         }
     }
+}
+
+```
+
+Add the following to *Preferenes > Settings*
+
+```
+"paths": {
+    "linux": ["~/.nvm/versions/node/v13.7.0/bin"]
 }
 ```
 
@@ -104,7 +113,9 @@ If you are having any issues, you can refer to AirBnB's [documentation](https://
 `
 
 
-Restart Sublime Text.
+Close Sublime Text and in order for ESlint to work, **you must open Sublime through the command line**. Go inside your project folder and enter:
+
+`$ subl .`
 
 Confirm that ESlint is working properly:
 
@@ -113,10 +124,10 @@ Confirm that ESlint is working properly:
 
 ![eslint](./eslint.png)
 
-If you have any issues or you there is a misinformation, feel free to send me an email.
+If you have any questions or comments, please feel free to send me an email.
 
 **Notes**
 
-- https://github.com/SublimeLinter/SublimeLinter-eslint/issues/205
-- https://github.com/eslint/eslint/issues/10137
-- https://github.com/SublimeLinter/SublimeLinter/issues/128
+- [SublimeLinter and NVM issue](https://github.com/SublimeLinter/SublimeLinter-eslint/issues/205)
+- [SublimeLinter doesn't recognize linters installed with NVM ](https://github.com/SublimeLinter/SublimeLinter/issues/128)
+- [ /usr/bin/env: ‘node’: No such file or directory](https://github.com/SublimeLinter/SublimeLinter-eslint/issues/265)
