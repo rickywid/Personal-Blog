@@ -51,14 +51,19 @@ First let's make a backup of the original configuration file.
 
 Now that we have created a backup, we can edit the Samba configuration file. Open **/etc/samba/smb.conf** with your favourite text editor.
 
-Add the following to the end of the file:
+Add the following to the config file:
 
 ```
+[Global]
+	...
+	unix extensions = no # allow symlinks
+
 [Shared]
 	comment = Shared Files
 	path = /home/rickyjw/Shared (change pathname to your shared folder)
 	browsable = yes
 	read only = no
+	wide links = yes # allow symlinks
 	# guest ok = yes
 ```
 
@@ -104,15 +109,25 @@ $ firewall-cmd --reload
 ### Accessing Your Shared Folder from Another Computer
 Let's try to connect to our shared folder from another computer. The computer must be on the same local network in order to connect. If your computers are connected through a home router then all devices should be connected to the same network.
 
-Get the IP address of the Samba server host machine:
+Get the IP address of the Samba server:
 
-`$ ifconfig # e.g 192.168.0.18`
+`$ ifconfig # 192.168.0.18`
 
-On your other computer, open up your file manager and enter the following in the folder path bar:
+On the client machine, check if Samba is installed:
+
+`$ smbd -V # Version 4.11.6`
+
+If Samba is not installed, you need to install it:
+
+`$ pacman -S samba`
+
+*Use the appropriate package manager for your distro (apt, dnf etc..).*
+
+On the client machine, open up your file manager and enter the following in the folder path bar:
 
 `smb://192.168.0.18`
 
-*I've only tested this on my other laptop running Manjaro 19.*
+*This was tested on a Manjaro 19.*
 
 
 If Samba was able to connect, you should be able to see your shared folder. Try opening it and it should then prompt you to enter the username and password that we setup earlier. If the login was successful, you should now be able to see the test file that we created.
